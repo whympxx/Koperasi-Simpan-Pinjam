@@ -1,0 +1,103 @@
+{
+    "executed_at": "2026-08-17 23:48:38",
+    "passed": 12,
+    "total": 12,
+    "cases": [
+        {
+            "id": "TC-15",
+            "scenario": "Nilai batas masa kerja (R01): 12 bulan dan 11 bulan",
+            "expected": "12 bulan lolos penyaringan; 11 bulan ditolak dengan alasan masa kerja",
+            "actual": "12 bulan: eligible (R01=not_fired); 11 bulan: reject (R01)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-16",
+            "scenario": "Nilai batas simpanan wajib (R08): Rp50.000 dan Rp49.999",
+            "expected": "Rp50.000 lolos; Rp49.999 ditolak, simpanan wajib di bawah minimum",
+            "actual": "Rp50.000: eligible (R08=not_fired); Rp49.999: reject (R08)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-17",
+            "scenario": "Nilai batas plafon 2 × simpanan wajib (R05): Rp4.000.000 dan Rp4.000.001 atas simpanan Rp2.000.000",
+            "expected": "Nilai tepat plafon diterima; kelebihan Rp1 ditolak",
+            "actual": "Rp4.000.000: eligible (R05=not_fired); Rp4.000.001: reject (R05)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-18",
+            "scenario": "Nilai batas plafon 1 × simpanan wajib (R05): Rp2.000.000 dan Rp2.000.001 atas simpanan Rp2.000.000",
+            "expected": "Nilai tepat plafon diterima; kelebihan Rp1 ditolak",
+            "actual": "Rp2.000.000: eligible (R05=not_fired); Rp2.000.001: reject (R05)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-19",
+            "scenario": "Nilai batas tenor maksimum kebijakan (R06): 18 bulan dan 19 bulan",
+            "expected": "18 bulan lolos penyaringan; 19 bulan ditolak sistem",
+            "actual": "18 bulan: eligible (R06=not_fired); 19 bulan: reject (R06)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-20",
+            "scenario": "Nilai batas rasio angsuran terhadap gaji (R07, nonaktif): 40% dan 41%",
+            "expected": "Tidak terpicu pada 40%; terpicu pada 41% bila kaidah diaktifkan",
+            "actual": "R07 aktif: 40% eligible (R07=not_fired); 41% reject (R07); R07 nonaktif: 41% eligible (-)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-21",
+            "scenario": "Nilai batas nominal persetujuan otomatis (R11): Rp5.000.000 dan Rp5.000.001",
+            "expected": "Rp5.000.000 disetujui otomatis; Rp5.000.001 peninjauan manual",
+            "actual": "Rp5.000.000: approve (R14); Rp5.000.001: manual_review (R11)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-22",
+            "scenario": "Nilai batas tenor persetujuan otomatis (R12\/R15): 12 bulan dan 13 bulan",
+            "expected": "12 bulan disetujui otomatis; 13 bulan peninjauan manual",
+            "actual": "12 bulan: approve (R14); 13 bulan: manual_review (R15)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-23",
+            "scenario": "Nilai batas riwayat tunggakan (R13): 2 kali dan 3 kali",
+            "expected": "Dua kali tidak memicu kaidah; tiga kali memicu peninjauan manual",
+            "actual": "2 kali: approve (R13=not_fired); 3 kali: manual_review (R13)",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-24",
+            "scenario": "Nilai batas nominal minimum formulir: Rp100.000 dan Rp99.999",
+            "expected": "Rp100.000 diterima; Rp99.999 ditolak validasi formulir",
+            "actual": "Rp100.000: diterima; Rp99.999: Jumlah pinjaman minimal Rp 100.000.",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-25",
+            "scenario": "Nilai batas domain tenor formulir: 1 dan 18 bulan serta 0 dan 19 bulan",
+            "expected": "Nilai 1 dan 18 diterima; nilai 0 dan 19 ditolak validasi tenor",
+            "actual": "1: diterima; 18: diterima; 0: Jangka waktu harus diisi dan antara 1-18 bulan.; 19: Jangka waktu harus diisi dan antara 1-18 bulan.",
+            "status": "Lulus",
+            "passed": true
+        },
+        {
+            "id": "TC-26",
+            "scenario": "Nilai diskrit sakelar persetujuan otomatis (R10) dan potongan gaji HRD (R16): 1 dan 0",
+            "expected": "Nilai 1 tidak memicu kaidah; nilai 0 memicu peninjauan manual",
+            "actual": "Nilai 1: approve (R10=not_fired, R16=not_fired); auto-approve 0: manual_review (R10); potongan HRD 0: manual_review (R16)",
+            "status": "Lulus",
+            "passed": true
+        }
+    ]
+}

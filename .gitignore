@@ -1,0 +1,21 @@
+# Log runtime aplikasi
+logs/*
+!logs/.gitkeep
+
+# File unggahan pengguna
+uploads/**/*
+!uploads/documents/
+!uploads/photos/
+!uploads/documents/.gitkeep
+!uploads/photos/.gitkeep
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
+
+# Python cache (skrip generator dokumen)
+__pycache__/
+*.pyc
