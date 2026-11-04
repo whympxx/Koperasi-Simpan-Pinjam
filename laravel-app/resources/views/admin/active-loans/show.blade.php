@@ -51,7 +51,7 @@
                     <td class="text-end">{{ rupiah($s->total_amount, false) }}</td>
                     <td class="text-end">{{ $s->status === 'paid' ? rupiah($s->late_fee, false) : rupiah(\App\Services\LoanService::lateFee($s), false) }}</td>
                     <td>{{ $s->paid_date ? tanggal($s->paid_date) : '-' }}</td>
-                    <td>@if (in_array($s->id, $pendingScheduleIds))<span class="badge bg-info">Menunggu verifikasi</span>@else{!! status_badge($s->isOverdue() ? 'overdue' : $s->status) !!}@endif</td>
+                    <td>@if (in_array($s->id, $pendingScheduleIds))<span class="badge bg-info">Menunggu verifikasi</span>@elseif ($s->isOverdue()){!! status_badge('overdue') !!}@elseif ($s->status === 'paid'){!! status_badge('paid') !!}@else<span class="badge bg-light text-secondary border">Belum dibayar</span>@endif</td>
                     <td>
                         @if ($loan->status === 'active' && $firstUnpaid && $firstUnpaid->id === $s->id && ! in_array($s->id, $pendingScheduleIds))
                             <form method="POST" action="{{ route('admin.schedules.pay', $s) }}" class="d-flex gap-1" onsubmit="return confirm('Bukukan pembayaran angsuran ke-{{ $s->installment_number }}?')">@csrf

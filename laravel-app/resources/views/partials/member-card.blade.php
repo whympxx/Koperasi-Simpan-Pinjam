@@ -14,8 +14,8 @@
                 </div>
                 <i class="fas fa-building-columns fa-lg" style="color:var(--k-gold-400)"></i>
             </div>
-            <div class="chip my-3"></div>
-            <div class="number mb-3">{{ trim(chunk_split($acct, 4, ' ')) }}</div>
+            <div class="chip my-2"></div>
+            <div class="number mb-2">{{ trim(chunk_split($acct, 4, ' ')) }}</div>
             <div class="d-flex justify-content-between align-items-end mt-auto">
                 <div class="min-w-0">
                     <div class="label">Nama Anggota</div>

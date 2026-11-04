@@ -8,6 +8,34 @@ Keputusan kelayakan dan persetujuan pinjaman dijalankan oleh **mesin aturan berb
 ![MySQL](https://img.shields.io/badge/MySQL%20%2F%20MariaDB-8.x-4479A1?logo=mysql&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-4-FF6384?logo=chartdotjs&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-3D-000000?logo=threedotjs&logoColor=white)
+
+> **Versi terbaru berbasis Laravel 12 ada di folder [`laravel-app/`](laravel-app/)**: desain baru tema navy-emas,
+> animasi 3D, verifikasi setoran/pembayaran oleh pengurus, potong gaji massal, pelunasan dipercepat, kwitansi,
+> pengumuman, dan kartu anggota digital. Cara instalasi dan akun demo ada di [`laravel-app/README.md`](laravel-app/README.md).
+
+![Halaman login dengan animasi 3D](docs/screenshots/login.png)
+
+## Tampilan Aplikasi (Laravel)
+
+### Anggota
+
+| Beranda anggota & kartu anggota digital | Jadwal angsuran & simulasi pelunasan |
+|---|---|
+| ![Beranda anggota](docs/screenshots/member-dashboard.png) | ![Pinjaman anggota](docs/screenshots/member-loans.png) |
+| **Profil & kartu anggota digital 3D** | **Kwitansi transaksi** |
+| ![Kartu anggota](docs/screenshots/member-card.png) | ![Kwitansi](docs/screenshots/receipt.png) |
+
+### Pengurus
+
+| Dashboard pengurus | Verifikasi setoran & pembayaran |
+|---|---|
+| ![Dashboard pengurus](docs/screenshots/admin-dashboard.png) | ![Verifikasi](docs/screenshots/admin-verification.png) |
+| **Potong gaji massal** | **Pelunasan dipercepat** |
+| ![Potong gaji](docs/screenshots/admin-payroll.png) | ![Pelunasan dipercepat](docs/screenshots/admin-loan-payoff.png) |
+| **Perhitungan & pembagian SHU** | **Basis aturan (rule engine)** |
+| ![SHU](docs/screenshots/admin-shu.png) | ![Basis aturan](docs/screenshots/admin-rules.png) |
 
 ---
 

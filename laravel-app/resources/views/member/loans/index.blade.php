@@ -33,7 +33,8 @@
                             <td>
                                 @if (in_array($s->id, $pendingScheduleIds))<span class="badge bg-info">Menunggu verifikasi</span>
                                 @elseif ($s->isOverdue()) {!! status_badge('overdue') !!}
-                                @else {!! status_badge($s->status === 'pending' ? 'pending' : $s->status) !!} @endif
+                                @elseif ($s->status === 'paid') {!! status_badge('paid') !!}
+                                @else <span class="badge bg-light text-secondary border">Belum dibayar</span> @endif
                             </td>
                         </tr>
                     @endforeach
